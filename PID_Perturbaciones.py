@@ -15,7 +15,7 @@ Offset[6][0]=2.32
 Offset[7][0]=1.18
 Offset[8][0]=0.54
 
-doc = openpyxl.load_workbook('Constantes2.xlsx')
+doc = openpyxl.load_workbook('Constantes.xlsx')
 hoja = doc.get_sheet_by_name('Hoja1')
 kij=np.zeros((9,9))
 for f in range(9):
@@ -25,7 +25,7 @@ for f in range(9):
         kij[f][g]=float(hoja[celda].value)
         g=g+1
 
-doc1 = openpyxl.load_workbook('ConsPert3.xlsx')
+doc1 = openpyxl.load_workbook('ConsPert.xlsx')
 hoja1 = doc1.get_sheet_by_name('Hoja1')
 kip=np.zeros((9,2))
 for f in range(9):
