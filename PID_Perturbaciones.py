@@ -15,7 +15,7 @@ Offset[6][0]=2.32
 Offset[7][0]=1.18
 Offset[8][0]=0.54
 
-doc = openpyxl.load_workbook('Constantes.xlsx')
+doc = openpyxl.load_workbook('Constantes2.xlsx')
 hoja = doc.get_sheet_by_name('Hoja1')
 kij=np.zeros((9,9))
 for f in range(9):
@@ -25,7 +25,7 @@ for f in range(9):
         kij[f][g]=float(hoja[celda].value)
         g=g+1
 
-doc1 = openpyxl.load_workbook('ConsPert.xlsx')
+doc1 = openpyxl.load_workbook('ConsPert3.xlsx')
 hoja1 = doc1.get_sheet_by_name('Hoja1')
 kip=np.zeros((9,2))
 for f in range(9):
@@ -87,7 +87,7 @@ r=200
 R=r*np.ones((9,1))
 pert=np.zeros((2,1))
 
-for j in range(600):
+for j in range(301):
     if j==301:
         r=250
         R=r*np.ones((9,1))
@@ -117,6 +117,36 @@ for j in range(600):
     s5_1=arduino5.readline()
     s6_1=arduino6.readline()
     s7_1=arduino7.readline()
+
+    while s1_1.find('.')==-1:
+        s1_1=arduino1.readline()
+    
+    while s2_1.find('.')==-1:
+        s2_1=arduino1.readline()
+    
+    while s3_1.find('.')==-1:
+        s3_1=arduino1.readline()
+    
+    while s4_1.find('.')==-1:
+        s4_1=arduino1.readline()
+
+    while s5_1.find('.')==-1:
+        s5_1=arduino1.readline()
+    
+    while s6_1.find('.')==-1:
+        s6_1=arduino1.readline()
+    
+    while s7_1.find('.')==-1:
+        s7_1=arduino1.readline()
+
+    arduino1.close()
+    arduino2.close()
+    arduino3.close()
+    arduino4.close()
+    arduino5.close()
+    arduino6.close()
+    arduino7.close()
+
     
     f8=open ('med8.txt','r')
     s8_1=f8.readline()
@@ -235,14 +265,7 @@ for j in range(600):
     pwm8.extend([u[7][0]])
     pwm9.extend([u[8][0]])
     
-    
-    arduino1.close()
-    arduino2.close()
-    arduino3.close()
-    arduino4.close()
-    arduino5.close()
-    arduino6.close()
-    arduino7.close()
+
     print(s)
     print(u)
     print(y)
